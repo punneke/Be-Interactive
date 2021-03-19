@@ -1,6 +1,6 @@
 Greetings and welcome to the Be-Interactive Venice trip project! In this readme I will guide you through the various things that were involved in making this project, and I will give a short instruction as to how to setup this project for use on your own pc! But, first things first:
 
-This project was made with the idea that employee’s of Be-Interactive could visit the site and sign up for the Venice business trip planned later this year. Upon registration for the trip, said employee’s would receive a confirmation e-mail with the filled in data plus a link they could use to edit their filled in information.
+This project was made so that employee’s of Be-Interactive could visit the site and sign up for the Venice business trip planned later this year. Upon registration for the trip, said employee’s would receive a confirmation e-mail with the filled in info plus a link they could use to edit their filled in info.
 
 The project had the following requirements:
 
@@ -21,7 +21,7 @@ System requirements included:
 -	PHP 7.4 or higher
 -	Data storage in MySQL
 
-Note: I added phone number here, since it is very handy to have in case of an emergency.
+Note: I added phone number here, since it is very handy to have in case of an emergency during travels.
 
 
 Installation:
@@ -29,7 +29,7 @@ In order to install the project on your pc you can use the following link to clo
 
 https://github.com/Torque-86/Be-Interactive
 
-Unzip the project in the htdocs folder of your Xampp folder. Open Commandpromt or Powershell. Navigate to the folder where you just unzipped the project. Now type “Code .” This should automatically open Visual studio Code with the entire project loaded.
+Unzip the project in the htdocs folder of your Xampp folder. Open Commandprompt or Powershell. Navigate to the folder where you just unzipped the project. Now type “Code .” This should automatically open Visual studio Code with the entire project loaded.
 
 Start up Xampp, start your Apache and SQL servers. 
 
