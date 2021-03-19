@@ -54,7 +54,7 @@
              <div class="col-md-12">
                <div class="form-group">
                    <label> Email </label>
-                   <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder='email' name="email">
+                   <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder='email' name="email">
                    @error('email')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
                <div class="col-md-12">
                 <div class="form-group">
                    <label> Telefoonnummer </label>
-                   <input type="text" class="form-control @error('phone_number') is-invalid @enderror" placeholder="Telefoonnummer" name="phone_number">
+                   <input type="number" class="form-control @error('phone_number') is-invalid @enderror" placeholder="Telefoonnummer" name="phone_number">
                    @error('phone_number')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
