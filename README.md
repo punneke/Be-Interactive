@@ -37,7 +37,7 @@ Connecting the database:
 In order to properly use the project you have to connect a database to Laravel. There is one provided in the Github Repository. Import it to your SQL server. If you have a useraccount already set up in MySQL make sure it is now connected to the new database and has all rights to create, delete, edit etc.
 
 Setup .env:
-Laravel uses a connection file to handle all database, e-mailservers and other connections. In VSC, navigate to .env. Fill in all relevant data here. This includes:
+Laravel uses a connection file to handle all database, e-mailservers and other connections. In VSC, navigate to .env.example Fill in all relevant data here. This includes:
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -57,6 +57,7 @@ MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS=null
 MAIL_FROM_NAME="${APP_NAME}"
 
+After that, rename it to ".env" and it should work.
 
 Starting the project:
 Go back to VSC, select terminal -> New Terminal. Now type: “php artisan serve” to start the project. After this, navigate to localhost:8000 on any browser to view the project.
