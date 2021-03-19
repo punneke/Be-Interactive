@@ -26,7 +26,6 @@
         	    {{ Session::get('success') }}
                </div>
            @endif
-
            <form method="post" action= "update">
              {{csrf_field()}}
              <div class="row">
@@ -104,9 +103,6 @@
                       <input type="checkbox" name="goingwith" value="1">
                       <span class="slider"></span>
                     </label>
-
-                  
-                   
                    @error('Ga je mee?')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -122,9 +118,6 @@
                         <option value="Nee">Nee</option>
                         <option value="Misschien">Misschien</option>
                       </select> 
-                   
-              
-
                    @error('phone_number')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>

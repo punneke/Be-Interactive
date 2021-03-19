@@ -15,7 +15,7 @@ class UpdateContact extends Controller
     function update(Request $request)
     {
         $this->validate($request, [
-            'id' => 'required',
+            'id' => 'required', //Can't edit without UUID.
             'name' => 'required',
             'email' => 'required|email',
             'dateofbirth' => 'required',
@@ -23,8 +23,8 @@ class UpdateContact extends Controller
             'passport' => 'required',
         ]);
 
-        $contact = Contact::where('id', $request->id)->first();
-
+        $contact = Contact::where('id', $request->id)->first(); // This checks what row to change in database based on UUID.
+        // All required data from form.
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->dateofbirth = $request->dateofbirth;
@@ -38,7 +38,7 @@ class UpdateContact extends Controller
         $contact->save();
 
         $id = $contact->id;
-
+        // E-mail function with relevant data and edit link.
         \Mail::send('confirmation_email',
         array(
             'id' => $contact->id,

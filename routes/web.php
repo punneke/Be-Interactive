@@ -23,29 +23,16 @@ Route::get('/', function () {
 
 });
 
-//Routes voor Contactform
+//Routes for Contactform
 Route::get('contact-us', [ContactController::class, 'getContact']);
 Route::post('contact-us', [ContactController::class, 'saveContact']);
 
-
-
-//Zonder Signed Route:
+//Routes for edit_form.
 Route::view('edit_form', 'edit_form');
 Route::post('update', [UpdateContact::class, 'update']);
 
-//Met Signed Route:
+//Routes with Signed function. Couldn't get this to work.
 // Route::view('edit_form', 'edit_form')->name('form.update')->middleware('signed');
 // Route::get('update', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');
 // Route::post('update', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');
 
-
-
-
-//Oud zooi:
-
-// Route::get('/application-form/{form}/edit', [FormController::class, 'edit'])->name('form.edit')->middleware('signed');
-// Route::post('/application-form/{form}', [FormController::class, 'update'])->name('form.update')->middleware('signed');
-
-//Routes voor Edit/update
-// Route::get('edit_form', [UpdateContact::class, 'edit_form'])->name('form.edit')->middleware('signed');
-// Route::post('edit_form', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');

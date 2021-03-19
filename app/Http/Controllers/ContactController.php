@@ -24,8 +24,7 @@ class ContactController extends Controller {
         ]);
  
         $contact = new Contact;
-
-
+        // All required data from form.
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->dateofbirth = $request->dateofbirth;
@@ -39,7 +38,7 @@ class ContactController extends Controller {
         $contact->save();
 
         $id = $contact->id;
-
+        // E-mail function with relevant data.
         \Mail::send('contact_email',
         array(
             'id' => $contact->id,
@@ -59,7 +58,7 @@ class ContactController extends Controller {
              $message->from($request->email);
              $message->to('robbertbode@gmail.com');
         });
-
+        // E-mail function with relevant data and edit link.
         \Mail::send('confirmation_email',
           array(
               'id' => $contact->id,
