@@ -56,7 +56,7 @@ class ContactController extends Controller {
         ), function($message) use ($request)
         {
              $message->from($request->email);
-             $message->to('robbertbode@gmail.com');
+             $message->to('be.interactiveopdracht@gmail.com');
         });
         // E-mail function with relevant data and edit link.
         \Mail::send('confirmation_email',
