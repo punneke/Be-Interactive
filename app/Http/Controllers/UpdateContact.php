@@ -6,23 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ContactController;
 use App\Models\ContactModel;
 use App\Models\Contact;
+use App\Models\User;
+use App\Contacts;
 use DB;
 
 class UpdateContact extends Controller
 {
     function update(Request $request)
     {
-        // ContactModel::where('id', 1)
-        // ->update(['name'=>$request->name]);
-        // ->update(['email'=>$request->email]);
-        // ->update(['dateofbirth'=>$request->dateofbirth]);
-        // ->update(['phone_number'=>$request->phone_number]);
-        // ->update(['passport'=>$request->passport]);
-        // ->update(['goingwith'=>$request->goingwith]);
-        // ->update(['fearofflight'=>$request->fearofflight]);
-        // ->update(['allergies'=>$request->allergies]);
-        // ->update(['travelwishes'=>$request->travelwishes]);
-
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
@@ -30,8 +21,8 @@ class UpdateContact extends Controller
             'phone_number' => 'required',
             'passport' => 'required',
         ]);
- 
-        $contact = Contact::find($request->id);
+
+        $contact = Contact::where('email', $request->email)->first();
 
         $contact->name = $request->name;
         $contact->email = $request->email;

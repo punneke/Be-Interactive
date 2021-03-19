@@ -24,8 +24,8 @@ Route::get('/', function () {
 });
 
 //Routes voor Contactform
-Route::get('sign_up', [ContactController::class, 'getContact']);
-Route::post('sign_up', [ContactController::class, 'saveContact']);
+Route::get('contact-us', [ContactController::class, 'getContact']);
+Route::post('contact-us', [ContactController::class, 'saveContact']);
 
 
 
