@@ -15,6 +15,7 @@ class UpdateContact extends Controller
     function update(Request $request)
     {
         $this->validate($request, [
+            'id' => 'required',
             'name' => 'required',
             'email' => 'required|email',
             'dateofbirth' => 'required',
@@ -22,7 +23,7 @@ class UpdateContact extends Controller
             'passport' => 'required',
         ]);
 
-        $contact = Contact::where('email', $request->email)->first();
+        $contact = Contact::where('id', $request->id)->first();
 
         $contact->name = $request->name;
         $contact->email = $request->email;
@@ -35,6 +36,32 @@ class UpdateContact extends Controller
         $contact->travelwishes = $request->travelwishes;
 
         $contact->save();
+
+        $id = $contact->id;
+
+        \Mail::send('confirmation_email',
+        array(
+            'id' => $contact->id,
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'dateofbirth' => $request->get('dateofbirth'),
+            'phone_number' => $request->get('phone_number'),
+            'passport' => $request->get('passport'),
+            'goingwith' => $request->get('goingwith'),
+            'fearofflight' => $request->get('fearofflight'),
+            'allergies' => $request->get('allergies'),
+            'travelwishes' => $request->get('travelwishes'),
+
+
+        ), function($message) use ($request)
+          {
+             $message->from($request->email);
+             $message->to($request->email);
+          });
+
+      return back()->with('success', 'Bedankt voor het doorgeven!');
+
+
 
     }
 }

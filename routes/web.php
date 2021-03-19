@@ -34,7 +34,8 @@ Route::view('edit_form', 'edit_form');
 Route::post('update', [UpdateContact::class, 'update']);
 
 //Met Signed Route:
-// Route::view('edit_form', 'edit_form')->name('form.edit')->middleware('signed');
+// Route::view('edit_form', 'edit_form')->name('form.update')->middleware('signed');
+// Route::get('update', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');
 // Route::post('update', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');
 
 

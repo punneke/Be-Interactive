@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Be-Interactive Venetië Trip!</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 
         <style>
             body {
-                background-image: url('https://whc.unesco.org/uploads/thumbs/news_2043-890-520-20191014144910.jpg');
+                background-image: url('https://wallpaperaccess.com/full/115099.jpg');
                 height: 100%;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -26,7 +26,9 @@
         </style>
     </head>
     <body class="antialiased">
-    <center><h1>Welkom op de sign-up pagina voor de Be-Interactive Venetië trip!</h1>
+    <center>
+    
+    <h1 style="background-color:white;">Welkom op de sign-up pagina voor de Be-Interactive Venetië trip!</h1>
 
 
     <form action="http://localhost:8000/contact-us">

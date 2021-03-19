@@ -12,6 +12,7 @@
 
 <body>
 
+
 <div class="content">
    <div class="row">
      <div class="col-md-12">
@@ -29,6 +30,17 @@
            <form method="post" action= "update">
              {{csrf_field()}}
              <div class="row">
+             <div class="col-md-12">
+                 <div class="form-group">
+                   <label> ID </label>
+                   <input type="text" class="form-control @error('ID') is-invalid @enderror" placeholder="Voeg hier je ID toe" name="id">
+                   @error('id')
+                       <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                       </span>
+                   @enderror
+                 </div>
+               </div>
                <div class="col-md-12">
                  <div class="form-group">
                    <label> Naam </label>
@@ -43,7 +55,7 @@
              <div class="col-md-12">
                <div class="form-group">
                    <label> Email </label>
-                   <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
+                   <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder='email' name="email">
                    @error('email')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>

@@ -4,6 +4,7 @@
 use Illuminate\Http\Request; 
 use App\Models\Contact; 
 use Mail; 
+use DB;
 
 class ContactController extends Controller { 
 
@@ -24,6 +25,7 @@ class ContactController extends Controller {
  
         $contact = new Contact;
 
+
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->dateofbirth = $request->dateofbirth;
@@ -36,8 +38,11 @@ class ContactController extends Controller {
 
         $contact->save();
 
+        $id = $contact->id;
+
         \Mail::send('contact_email',
         array(
+            'id' => $contact->id,
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'dateofbirth' => $request->get('dateofbirth'),
@@ -55,10 +60,10 @@ class ContactController extends Controller {
              $message->to('robbertbode@gmail.com');
         });
 
-          
-          \Mail::send('confirmation_email',
+        \Mail::send('confirmation_email',
           array(
-              'name' => $request->get('name'),
+              'id' => $contact->id,
+              'name' => $request->name,
               'email' => $request->get('email'),
               'dateofbirth' => $request->get('dateofbirth'),
               'phone_number' => $request->get('phone_number'),
@@ -79,23 +84,6 @@ class ContactController extends Controller {
 
     }
 
-    public function edit(Request $request) { 
-
-      return view('Edit_form'); 
-    } 
-
-
-
-
-    public function update() { 
-
-      return view('contact_us'); 
-    } 
-
-
-
-
-
-
+    
 }
 
