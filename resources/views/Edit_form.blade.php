@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<?php error_reporting(0); ?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
                </div>
            @endif
            
-          <form method="post" action="contact-us">
+           <form method="POST" action= "{{ URL::signedRoute('form.update', $request) }}">
              {{csrf_field()}}
              <div class="row">
                <div class="col-md-12">

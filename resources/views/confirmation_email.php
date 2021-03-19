@@ -1,18 +1,5 @@
 <h2>Beste vakantieganger,</h2>
 We hebben jouw aanmelding ontvangen!
-
-{{ $email->content }}
-
-
-
-
-
-
-
-
-<!-- 
-
-
 Hier zijn de details:
 <b>Naam: </b>{{ $name }} 
 <b>Email:</b> {{ $email }} 
@@ -25,7 +12,6 @@ Hier zijn de details:
 <b>Reiswensen:</b> {{ $travelwishes }} 
 
 Mocht je deze nog willen wijzigen, klik dan op de onderstaande link!
+<?php URL::signedRoute('form.edit', $form) ?>
 
 
-
- -->

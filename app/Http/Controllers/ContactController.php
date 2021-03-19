@@ -36,47 +36,66 @@ class ContactController extends Controller {
 
         $contact->save();
 
-        // \Mail::send('contact_email',
-        // array(
-        //     'name' => $request->get('name'),
-        //     'email' => $request->get('email'),
-        //     'dateofbirth' => $request->get('dateofbirth'),
-        //     'phone_number' => $request->get('phone_number'),
-        //     'passport' => $request->get('passport'),
-        //     'goingwith' => $request->get('goingwith'),
-        //     'fearofflight' => $request->get('fearofflight'),
-        //     'allergies' => $request->get('allergies'),
-        //     'travelwishes' => $request->get('travelwishes'),
+        \Mail::send('contact_email',
+        array(
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'dateofbirth' => $request->get('dateofbirth'),
+            'phone_number' => $request->get('phone_number'),
+            'passport' => $request->get('passport'),
+            'goingwith' => $request->get('goingwith'),
+            'fearofflight' => $request->get('fearofflight'),
+            'allergies' => $request->get('allergies'),
+            'travelwishes' => $request->get('travelwishes'),
 
 
-        // ), function($message) use ($request)
-        // {
-        //      $message->from($request->email);
-        //      $message->to('robbertbode@gmail.com');
-        // });
+        ), function($message) use ($request)
+        {
+             $message->from($request->email);
+             $message->to('robbertbode@gmail.com');
+        });
 
           
-        //   \Mail::send('confirmation_email',
-        //   array(
-        //       'name' => $request->get('name'),
-        //       'email' => $request->get('email'),
-        //       'dateofbirth' => $request->get('dateofbirth'),
-        //       'phone_number' => $request->get('phone_number'),
-        //       'passport' => $request->get('passport'),
-        //       'goingwith' => $request->get('goingwith'),
-        //       'fearofflight' => $request->get('fearofflight'),
-        //       'allergies' => $request->get('allergies'),
-        //       'travelwishes' => $request->get('travelwishes'),
+          \Mail::send('confirmation_email',
+          array(
+              'name' => $request->get('name'),
+              'email' => $request->get('email'),
+              'dateofbirth' => $request->get('dateofbirth'),
+              'phone_number' => $request->get('phone_number'),
+              'passport' => $request->get('passport'),
+              'goingwith' => $request->get('goingwith'),
+              'fearofflight' => $request->get('fearofflight'),
+              'allergies' => $request->get('allergies'),
+              'travelwishes' => $request->get('travelwishes'),
   
   
-        //   ), function($message) use ($request)
-        //     {
-        //        $message->from($request->email);
-        //        $message->to($request->email);
-        //     });
+          ), function($message) use ($request)
+            {
+               $message->from($request->email);
+               $message->to($request->email);
+            });
 
         return back()->with('success', 'Bedankt voor het doorgeven!');
 
     }
+
+    public function edit(Request $request) { 
+
+      return view('Edit_form'); 
+    } 
+
+
+
+
+    public function update() { 
+
+      return view('contact_us'); 
+    } 
+
+
+
+
+
+
 }
 

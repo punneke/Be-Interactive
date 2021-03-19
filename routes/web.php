@@ -23,7 +23,10 @@ Route::get('/', function () {
 Route::get('contact-us', [ContactController::class, 'getContact']);
 Route::post('contact-us', [ContactController::class, 'saveContact']);
 
-Route::post('/contact', function(Request $request) {
-    Mail::send(new ContactMail($request));
-    return redirect('/'); 
-});
+//Routes voor Edit/update
+Route::get('edit_form', [ContactController::class, 'edit_form'])->name('form.edit')->middleware('signed');
+Route::post('edit_form', [ContactController::class, 'update'])->name('form.update')->middleware('signed');
+
+
+// Route::get('/application-form/{form}/edit', [FormController::class, 'edit'])->name('form.edit')->middleware('signed');
+// Route::post('/application-form/{form}', [FormController::class, 'update'])->name('form.update')->middleware('signed');
