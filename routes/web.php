@@ -3,6 +3,10 @@
 use \Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UpdateContact;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +24,27 @@ Route::get('/', function () {
 });
 
 //Routes voor Contactform
-Route::get('contact-us', [ContactController::class, 'getContact']);
-Route::post('contact-us', [ContactController::class, 'saveContact']);
+Route::get('sign_up', [ContactController::class, 'getContact']);
+Route::post('sign_up', [ContactController::class, 'saveContact']);
 
-//Routes voor Edit/update
-Route::get('edit_form', [ContactController::class, 'edit_form'])->name('form.edit')->middleware('signed');
-Route::post('edit_form', [ContactController::class, 'update'])->name('form.update')->middleware('signed');
 
+
+//Zonder Signed Route:
+Route::view('edit_form', 'edit_form');
+Route::post('update', [UpdateContact::class, 'update']);
+
+//Met Signed Route:
+// Route::view('edit_form', 'edit_form')->name('form.edit')->middleware('signed');
+// Route::post('update', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');
+
+
+
+
+//Oud zooi:
 
 // Route::get('/application-form/{form}/edit', [FormController::class, 'edit'])->name('form.edit')->middleware('signed');
 // Route::post('/application-form/{form}', [FormController::class, 'update'])->name('form.update')->middleware('signed');
+
+//Routes voor Edit/update
+// Route::get('edit_form', [UpdateContact::class, 'edit_form'])->name('form.edit')->middleware('signed');
+// Route::post('edit_form', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');

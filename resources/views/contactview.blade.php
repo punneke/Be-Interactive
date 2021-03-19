@@ -25,8 +25,8 @@
         	    {{ Session::get('success') }}
                </div>
            @endif
-
-           <form method="post" action= "update">
+           
+           <form method="post" action= "{{ URL::signedRoute('form.update') }}">
              {{csrf_field()}}
              <div class="row">
                <div class="col-md-12">
@@ -93,7 +93,7 @@
                       <span class="slider"></span>
                     </label>
 
-                  
+                   <!-- <input type="checkbox" class="form-control @error('goingwith') is-invalid @enderror" name="goingwith"> -->
                    
                    @error('Ga je mee?')
                        <span class="invalid-feedback" role="alert">
@@ -111,7 +111,7 @@
                         <option value="Misschien">Misschien</option>
                       </select> 
                    
-              
+                   <!-- class="form-control @error('fearofflight') is-invalid @enderror" name="fearofflight"> -->
 
                    @error('phone_number')
                        <span class="invalid-feedback" role="alert">
@@ -146,7 +146,7 @@
              </div>
              <div class="row">
               <div class="update ml-auto mr-auto">
-                 <button type="submit" class="btn btn-primary btn-round">Wijzig!</button>
+                 <button type="submit" class="btn btn-primary btn-round">Verstuur!</button>
                </div>
              </div>
            </form>
