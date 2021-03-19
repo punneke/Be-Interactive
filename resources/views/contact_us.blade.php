@@ -25,7 +25,6 @@
         	    {{ Session::get('success') }}
                </div>
            @endif
-           
           <form method="post" action="contact-us">
              {{csrf_field()}}
              <div class="row">
@@ -92,9 +91,6 @@
                       <input type="checkbox" name="goingwith" value="1">
                       <span class="slider"></span>
                     </label>
-
-                   <!-- <input type="checkbox" class="form-control @error('goingwith') is-invalid @enderror" name="goingwith"> -->
-                   
                    @error('Ga je mee?')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -110,9 +106,6 @@
                         <option value="Nee">Nee</option>
                         <option value="Misschien">Misschien</option>
                       </select> 
-                   
-                   <!-- class="form-control @error('fearofflight') is-invalid @enderror" name="fearofflight"> -->
-
                    @error('phone_number')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
