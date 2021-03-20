@@ -25,7 +25,7 @@
     <body class="antialiased">
     <center>
     <h1 style="background-color:white;">Welkom op de sign-up pagina voor de Be-Interactive Venetië trip!</h1>
-    <form action="http://localhost:8000/contact-us">
+    <form action="{{route('contact-us')}}">
     <input type="submit" value="Geef je op!" style="height:50px; width:150px"/>
     </form>
     </center>
