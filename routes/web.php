@@ -24,7 +24,8 @@ Route::get('/', function () {
 });
 
 //Routes for Contactform
-Route::get('contact-us', [ContactController::class, 'getContact']);
+Route::get('contact-us', [ContactController::class, 'getContact'])->name('contact-us');
+Route::get('contact-us/{contact}', [ContactController::class, 'editContact'])->name('contact-us-tokenized');
 Route::post('contact-us', [ContactController::class, 'saveContact']);
 
 //Routes for edit_form.
@@ -32,8 +33,6 @@ Route::view('edit_form', 'edit_form');
 Route::post('update', [UpdateContact::class, 'update']);
 
 // Extra route for links.
-Route::get('contact-us', [ContactController::class, 'getContact']);
-Route::get('contact-us', [ContactController::class, 'getContact'])->name('contact-us');
 //Routes with Signed function. Couldn't get this to work.
 // Route::view('edit_form', 'edit_form')->name('form.update')->middleware('signed');
 // Route::get('update', [UpdateContact::class, 'update'])->name('form.update')->middleware('signed');

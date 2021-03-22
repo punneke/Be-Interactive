@@ -1,19 +1,28 @@
 <?php namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request; 
-use App\Models\Contact; 
-use Mail; 
+use Illuminate\Http\Request;
+use App\Models\Contact;
+use Mail;
 use DB;
 
-class ContactController extends Controller { 
+class ContactController extends Controller
+{
 
-      public function getContact() { 
+    public function getContact()
+    {
 
-       return view('contact_us'); 
-     } 
+        return view('contact_us');
+    }
 
-      public function saveContact(Request $request) { 
+    public function editContact(Contact $contact)
+    {
+        return $contact;
+        return view('edit_form');
+    }
+
+    public function saveContact(Request $request)
+    {
 
         $this->validate($request, [
             'name' => 'required',
@@ -83,6 +92,6 @@ class ContactController extends Controller {
 
     }
 
-    
+
 }
 

@@ -13,4 +13,4 @@ Hier zijn de details:<br><br>
 
 Mocht je deze nog willen wijzigen, klik dan op de onderstaande link en voer het volgende ID code bij het formulier in: <b> {{ $id }} </b><br><br>
 
-<a href='http://localhost:8000/edit_form'><button>Wijzig je gegevens!</button></a>
+<a href='{{ route('contact-us-tokenized', ['token' => $id]) }}'><button>Wijzig je gegevens!</button></a>
