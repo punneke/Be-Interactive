@@ -79,7 +79,7 @@ class ContactController extends Controller {
                $message->to($request->email);
             });
 
-        return back()->with('success', 'Bedankt voor het doorgeven!');
+        return back()->with('success', 'Bedankt voor het doorgeven!')->withInput();
 
     }
 
